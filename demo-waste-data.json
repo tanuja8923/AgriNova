@@ -1,0 +1,44 @@
+<escape>[
+  {
+    "id": "DEMO-001",
+    "wasteType": "Rice Straw",
+    "quantity": 500,
+    "unit": "kg",
+    "location": {
+      "district": "Agra",
+      "state": "Uttar Pradesh",
+      "country": "India"
+    },
+    "possibleUses": [
+      "Biomass",
+      "Composting"
+    ],
+    "estimatedRevenueINR": 3000,
+    "estimatedTransportCostINR": 500,
+    "estimatedHandlingCostINR": 200,
+    "otherCostsINR": 100,
+    "estimatedNetValueINR": 2200,
+    "status": "sample"
+  },
+  {
+    "id": "DEMO-002",
+    "wasteType": "Sugarcane Bagasse",
+    "quantity": 1000,
+    "unit": "kg",
+    "location": {
+      "district": "Agra",
+      "state": "Uttar Pradesh",
+      "country": "India"
+    },
+    "possibleUses": [
+      "Bioenergy",
+      "Paper Production"
+    ],
+    "estimatedRevenueINR": 5000,
+    "estimatedTransportCostINR": 800,
+    "estimatedHandlingCostINR": 300,
+    "otherCostsINR": 200,
+    "estimatedNetValueINR": 3700,
+    "status": "sample"
+  }
+]</escape>
