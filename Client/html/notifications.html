@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | AgriNova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/notifications.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="main-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>AgriNova</h2>
+                <span>Waste → Value</span>
+            </div>
+
+        </div>
+
+
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html">
+                <i class="fa-solid fa-plus"></i>
+                Submit Waste
+            </a>
+
+            <a href="best-utilization.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Value Analysis
+            </a>
+
+            <a href="group-collection.html">
+                <i class="fa-solid fa-layer-group"></i>
+                Collections
+            </a>
+
+            <a href="transport-dashboard.html">
+                <i class="fa-solid fa-truck"></i>
+                Transport
+            </a>
+
+        </nav>
+
+
+        <div class="header-profile">
+
+            <div class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="profile-info">
+                <strong>Farmer</strong>
+                <span>Agra Region</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="notifications-main">
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-intro">
+
+            <div class="intro-content">
+
+                <span class="eyebrow">
+                    <i class="fa-solid fa-bell"></i>
+                    Stay Updated
+                </span>
+
+                <h1>
+                    Your Notifications
+                </h1>
+
+                <p>
+                    Important updates about your waste, value,
+                    matching, collection and delivery.
+                </p>
+
+            </div>
+
+
+            <div class="notification-summary">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div>
+                    <strong id="unreadCount">3</strong>
+                    <span>Unread Notifications</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATION CONTROLS ================= -->
+
+        <section class="notification-controls">
+
+            <div class="filter-tabs">
+
+                <button class="filter-tab active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-tab" data-filter="unread">
+                    Unread
+                </button>
+
+                <button class="filter-tab" data-filter="collection">
+                    Collection
+                </button>
+
+                <button class="filter-tab" data-filter="value">
+                    Value
+                </button>
+
+                <button class="filter-tab" data-filter="system">
+                    System
+                </button>
+
+            </div>
+
+
+            <button class="mark-all-btn" id="markAllBtn">
+                <i class="fa-solid fa-check-double"></i>
+                Mark All as Read
+            </button>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATIONS ================= -->
+
+        <section class="notifications-section">
+
+            <!-- TODAY -->
+
+            <div class="notification-group">
+
+                <div class="group-heading">
+                    <h2>Today</h2>
+                    <span>3 updates</span>
+                </div>
+
+
+                <!-- Notification 1 -->
+
+                <article
+                    class="notification-card unread"
+                    data-category="collection"
+                >
+
+                    <div class="notification-icon collection-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Pickup Assigned
+                            </h3>
+
+                            <span class="notification-time">
+                                10 min ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your Rice Straw batch of
+                            <strong>2,000 kg</strong>
+                            has been assigned for pickup.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-calendar"></i>
+                                16 September
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-clock"></i>
+                                10:30 AM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Agra
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <span class="unread-dot"></span>
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Notification 2 -->
+
+                <article
+                    class="notification-card unread"
+                    data-category="value"
+                >
+
+                    <div class="notification-icon value-icon">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Best Value Found
+                            </h3>
+
+                            <span class="notification-time">
+                                32 min ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            AgriNova found a
+                            <strong>₹4,200 estimated net value</strong>
+                            pathway for your Rice Straw.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-industry"></i>
+                                Biomass Energy
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-road"></i>
+                                12 km
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-chart-line"></i>
+                                94% Match
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <span class="unread-dot"></span>
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Notification 3 -->
+
+                <article
+                    class="notification-card unread"
+                    data-category="system"
+                >
+
+                    <div class="notification-icon system-icon">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Burning Risk Updated
+                            </h3>
+
+                            <span class="notification-time">
+                                1 hr ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your current agricultural waste burning
+                            risk is <strong>Low</strong>.
+                            A suitable utilization path and pickup are available.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span class="risk-low">
+                                <i class="fa-solid fa-circle-check"></i>
+                                25% Risk
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-leaf"></i>
+                                Safe
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <span class="unread-dot"></span>
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- YESTERDAY -->
+
+            <div class="notification-group">
+
+                <div class="group-heading">
+                    <h2>Yesterday</h2>
+                    <span>2 updates</span>
+                </div>
+
+
+                <!-- Notification 4 -->
+
+                <article
+                    class="notification-card"
+                    data-category="collection"
+                >
+
+                    <div class="notification-icon collection-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Group Collection Created
+                            </h3>
+
+                            <span class="notification-time">
+                                Yesterday
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your batch has been grouped with
+                            <strong>3 nearby farmers</strong>
+                            for an optimized pickup.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-users"></i>
+                                4 Farmers
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-weight-hanging"></i>
+                                1,000 kg
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-route"></i>
+                                14 km
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Notification 5 -->
+
+                <article
+                    class="notification-card"
+                    data-category="system"
+                >
+
+                    <div class="notification-icon passport-icon">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Waste Passport Verified
+                            </h3>
+
+                            <span class="notification-time">
+                                Yesterday
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your Waste Passport
+                            <strong>AGRI-2026-00125</strong>
+                            has been successfully verified.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Verified
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-fingerprint"></i>
+                                Traceable Batch
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- EARLIER -->
+
+            <div class="notification-group">
+
+                <div class="group-heading">
+                    <h2>Earlier</h2>
+                    <span>2 updates</span>
+                </div>
+
+
+                <!-- Notification 6 -->
+
+                <article
+                    class="notification-card"
+                    data-category="value"
+                >
+
+                    <div class="notification-icon analysis-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Waste Analysis Complete
+                            </h3>
+
+                            <span class="notification-time">
+                                2 days ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            AgriNova analyzed your
+                            <strong>Rice Straw</strong>
+                            and identified multiple utilization pathways.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-building"></i>
+                                3 Potential Buyers
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-arrow"></i>
+                                12–26 km
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Notification 7 -->
+
+                <article
+                    class="notification-card"
+                    data-category="system"
+                >
+
+                    <div class="notification-icon welcome-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <div class="notification-top">
+
+                            <h3>
+                                Welcome to AgriNova
+                            </h3>
+
+                            <span class="notification-time">
+                                3 days ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your AgriNova account is ready.
+                            Start by telling us what agricultural waste you have.
+                        </p>
+
+                        <div class="notification-meta">
+
+                            <span>
+                                <i class="fa-solid fa-microphone"></i>
+                                Voice Enabled
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-leaf"></i>
+                                Waste → Value
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-actions">
+
+                        <button
+                            class="notification-menu"
+                            aria-label="Notification options"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EMPTY STATE ================= -->
+
+        <section class="notification-empty" id="emptyState">
+
+            <div class="empty-icon">
+                <i class="fa-regular fa-bell-slash"></i>
+            </div>
+
+            <h2>No notifications found</h2>
+
+            <p>
+                You're all caught up for this category.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SMART NOTE ================= -->
+
+        <section class="notification-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    AgriNova keeps you informed
+                </h3>
+
+                <p>
+                    You'll receive important updates when your waste is
+                    analyzed, matched, collected, delivered or when
+                    action is needed.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="main-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                    <h3>AgriNova</h3>
+                </div>
+
+                <p>
+                    Turning agricultural waste into measurable value.
+                </p>
+
+                <div class="footer-value">
+                    <span>🌾</span>
+                    <strong>Waste → Value</strong>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Platform</h4>
+
+                <a href="#">Smart Matching</a>
+                <a href="#">Value Analysis</a>
+                <a href="#">Waste Passport</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Operations</h4>
+
+                <a href="#">Collections</a>
+                <a href="#">Transport</a>
+                <a href="#">Route Planning</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <a href="#">Help Center</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AgriNova. All rights reserved.
+            </span>
+
+            <span>
+                Built for a cleaner, more valuable agriculture ecosystem.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Page JS -->
+    <script src="js/notifications.js"></script>
+
+</body>
+</html>

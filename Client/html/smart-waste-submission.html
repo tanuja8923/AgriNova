@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Waste Submission | AgriNova</title>
+
+    <link rel="stylesheet" href="../css/smart-waste-submission.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="farmer-dashboard.html" class="main-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="logo-text">
+                <span>Agri</span>Nova
+            </div>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html" class="active">
+                Submit Waste
+            </a>
+
+            <a href="waste-passport.html">
+                My Batches
+            </a>
+
+            <a href="waste-analysis.html">
+                Value Analysis
+            </a>
+
+            <a href="group-collection.html">
+                Collections
+            </a>
+
+            <a href="#">
+                Impact
+            </a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button class="language-selector">
+                <i class="fa-solid fa-language"></i>
+                <span>EN</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+
+            <div class="profile-menu">
+
+                <div class="profile-avatar">
+                    T
+                </div>
+
+                <div class="profile-info">
+                    <strong>Farmer</strong>
+                    <span>Agra, UP</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="submission-main">
+
+    <div class="submission-container">
+
+
+        <!-- BACK -->
+
+        <a href="farmer-dashboard.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Dashboard
+        </a>
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-intro">
+
+            <span class="page-eyebrow">
+                SMART WASTE SUBMISSION
+            </span>
+
+            <h1>
+                Tell us what agricultural
+                <span> waste you have.</span>
+            </h1>
+
+            <p>
+                Submit your farm waste in a few simple steps.
+                AgriNova will help you find the most valuable
+                utilization option.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SUBMISSION CARD ================= -->
+
+        <section class="submission-card">
+
+
+            <!-- VOICE SECTION -->
+
+            <div class="voice-section">
+
+                <div class="voice-icon">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+
+                <h2>
+                    Speak / Submit Waste
+                </h2>
+
+                <p>
+                    Simply tell us what waste you have
+                    and approximately how much.
+                </p>
+
+
+                <button class="voice-submit-btn" id="voiceSubmitBtn">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    <span>
+                        बोलकर बताएं
+                    </span>
+
+                </button>
+
+
+                <div class="voice-example">
+
+                    <i class="fa-solid fa-volume-high"></i>
+
+                    <span>
+                        Example: "मेरे पास 2 टन धान की पराली है।"
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider">
+
+                <span>OR ENTER MANUALLY</span>
+
+            </div>
+
+
+            <!-- MANUAL FORM -->
+
+            <form id="wasteSubmissionForm">
+
+
+                <!-- WASTE TYPE -->
+
+                <div class="form-group">
+
+                    <label for="wasteType">
+                        Waste Type
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-wheat-awn input-icon"></i>
+
+                        <select id="wasteType" required>
+
+                            <option value="">
+                                Select waste type
+                            </option>
+
+                            <option value="Rice Straw">
+                                Rice Straw / Paddy Straw
+                            </option>
+
+                            <option value="Wheat Straw">
+                                Wheat Straw
+                            </option>
+
+                            <option value="Corn Stalk">
+                                Corn Stalk
+                            </option>
+
+                            <option value="Banana Waste">
+                                Banana Waste
+                            </option>
+
+                            <option value="Groundnut Shells">
+                                Groundnut Shells
+                            </option>
+
+                            <option value="Coconut Waste">
+                                Coconut Waste
+                            </option>
+
+                            <option value="Sugarcane Bagasse">
+                                Sugarcane Bagasse
+                            </option>
+
+                            <option value="Other">
+                                Other Agricultural Waste
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="form-row">
+
+                    <div class="form-group quantity-group">
+
+                        <label for="quantity">
+                            Approximate Quantity
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-weight-hanging input-icon"></i>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                placeholder="e.g. 2"
+                                min="0.1"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group unit-group">
+
+                        <label for="unit">
+                            Unit
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <select id="unit">
+
+                                <option value="Ton">
+                                    Ton
+                                </option>
+
+                                <option value="Kg">
+                                    Kg
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <div class="location-input">
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-location-dot input-icon"></i>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="Your farm location"
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="detect-location-btn"
+                            id="detectLocationBtn"
+                        >
+
+                            <i class="fa-solid fa-location-crosshairs"></i>
+
+                            Detect Location
+
+                        </button>
+
+                    </div>
+
+                    <small>
+                        Your location helps AgriNova find nearby demand
+                        and calculate transport cost.
+                    </small>
+
+                </div>
+
+
+                <!-- QUALITY -->
+
+                <div class="form-group">
+
+                    <label for="quality">
+                        Waste Condition
+                        <span class="optional">(Optional)</span>
+                    </label>
+
+                    <div class="quality-options">
+
+                        <label class="quality-option">
+
+                            <input
+                                type="radio"
+                                name="quality"
+                                value="Dry"
+                            >
+
+                            <span>
+                                <i class="fa-solid fa-sun"></i>
+                                Dry
+                            </span>
+
+                        </label>
+
+
+                        <label class="quality-option">
+
+                            <input
+                                type="radio"
+                                name="quality"
+                                value="Moderately Dry"
+                            >
+
+                            <span>
+                                <i class="fa-solid fa-cloud-sun"></i>
+                                Moderately Dry
+                            </span>
+
+                        </label>
+
+
+                        <label class="quality-option">
+
+                            <input
+                                type="radio"
+                                name="quality"
+                                value="Fresh"
+                            >
+
+                            <span>
+                                <i class="fa-solid fa-leaf"></i>
+                                Fresh
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREVIEW -->
+
+                <div class="submission-preview">
+
+                    <div class="preview-header">
+
+                        <div>
+                            <span class="preview-label">
+                                WASTE PREVIEW
+                            </span>
+
+                            <h3>
+                                Ready to submit?
+                            </h3>
+                        </div>
+
+                        <div class="preview-check">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-details">
+
+                        <div class="preview-item">
+
+                            <i class="fa-solid fa-wheat-awn"></i>
+
+                            <div>
+                                <span>Waste</span>
+                                <strong id="previewWaste">
+                                    Not selected
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-item">
+
+                            <i class="fa-solid fa-weight-hanging"></i>
+
+                            <div>
+                                <span>Quantity</span>
+                                <strong id="previewQuantity">
+                                    Not entered
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-item">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <div>
+                                <span>Location</span>
+                                <strong id="previewLocation">
+                                    Not detected
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-waste-btn"
+                >
+
+                    <span>
+                        Submit My Waste
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <p class="privacy-note">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Your information is securely handled
+                    and used only for waste matching.
+
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="mini-process">
+
+            <div class="process-heading">
+
+                <span>
+                    WHAT HAPPENS NEXT?
+                </span>
+
+                <h2>
+                    AgriNova does the heavy lifting.
+                </h2>
+
+            </div>
+
+
+            <div class="process-grid">
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+
+                    <h3>
+                        Analyze
+                    </h3>
+
+                    <p>
+                        Your waste and quantity are analyzed.
+                    </p>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <h3>
+                        Find the Best Path
+                    </h3>
+
+                    <p>
+                        Nearby demand and transport economics
+                        are evaluated.
+                    </p>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+                    <h3>
+                        Show Your Value
+                    </h3>
+
+                    <p>
+                        You see the estimated best-value option.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <span>
+                    AgriNova
+                </span>
+
+            </div>
+
+            <p>
+                Turning agricultural waste into
+                measurable value.
+            </p>
+
+            <div class="footer-badge">
+                🌾 Farm Waste → Value
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="farmer-dashboard.html">
+                Farmer Dashboard
+            </a>
+
+            <a href="#">
+                Smart Matching
+            </a>
+
+            <a href="#">
+                Value Analysis
+            </a>
+
+            <a href="#">
+                Waste Passport
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Operations</h4>
+
+            <a href="#">
+                Collections
+            </a>
+
+            <a href="#">
+                Transport
+            </a>
+
+            <a href="#">
+                Industry Demand
+            </a>
+
+            <a href="#">
+                Impact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Support</h4>
+
+            <a href="#">
+                How It Works
+            </a>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AgriNova. All rights reserved.
+        </span>
+
+        <span>
+            Built for smarter agriculture.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/smart-waste-submission.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | AgriNova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <!-- =================================================
+         REGISTER PAGE
+    ================================================== -->
+
+    <div class="login-page">
+
+
+        <!-- ================================
+             LEFT BRAND SECTION
+        ================================= -->
+
+        <section class="login-brand">
+
+            <a href="index.html" class="login-logo">
+
+                <div class="login-logo-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+                    <strong>AgriNova</strong>
+                    <span>Agricultural Intelligence</span>
+                </div>
+
+            </a>
+
+
+            <div class="login-brand-content">
+
+                <span class="login-eyebrow">
+                    JOIN AGRINOVA
+                </span>
+
+                <h1>
+                    Give your waste
+                    <span>a better future.</span>
+                </h1>
+
+                <p>
+                    Join a smarter agricultural ecosystem where
+                    farm waste can become a valuable resource.
+                </p>
+
+
+                <div class="login-features">
+
+                    <div class="login-feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                        </div>
+
+                        <div>
+                            <strong>For Farmers</strong>
+                            <span>
+                                Find better value for your waste.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                        <div>
+                            <strong>For Industries</strong>
+                            <span>
+                                Source suitable agricultural residue.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div>
+                            <strong>For Transporters</strong>
+                            <span>
+                                Manage pickup and delivery opportunities.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-brand-bottom">
+                🌾 Minimum farmer effort. Maximum system automation.
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             REGISTER FORM
+        ================================= -->
+
+        <section class="login-form-section">
+
+            <div class="login-form-box">
+
+
+                <!-- Heading -->
+
+                <div class="login-heading">
+
+                    <span>GET STARTED</span>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Choose how you want to use AgriNova.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =============================
+                     ROLE SELECTION
+                ============================== -->
+
+                <div class="role-section">
+
+                    <label>
+                        Register as
+                    </label>
+
+
+                    <div class="role-grid">
+
+
+                        <!-- Farmer -->
+
+                        <button type="button"
+                            class="role-card active"
+                            data-role="farmer">
+
+                            <div class="role-card-icon">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                            </div>
+
+                            <div class="role-card-text">
+
+                                <strong>Farmer</strong>
+
+                                <span>
+                                    Manage & sell farm waste
+                                </span>
+
+                            </div>
+
+                            <div class="role-selected">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- Industry -->
+
+                        <button type="button"
+                            class="role-card"
+                            data-role="industry">
+
+                            <div class="role-card-icon">
+                                <i class="fa-solid fa-industry"></i>
+                            </div>
+
+                            <div class="role-card-text">
+
+                                <strong>Industry</strong>
+
+                                <span>
+                                    Source agricultural waste
+                                </span>
+
+                            </div>
+
+                            <div class="role-selected">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- Transporter -->
+
+                        <button type="button"
+                            class="role-card"
+                            data-role="transporter">
+
+                            <div class="role-card-icon">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+
+                            <div class="role-card-text">
+
+                                <strong>Transporter</strong>
+
+                                <span>
+                                    Manage pickup & delivery
+                                </span>
+
+                            </div>
+
+                            <div class="role-selected">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================
+                     FORM
+                ============================== -->
+
+                <form id="registerForm">
+
+
+                    <!-- Name -->
+
+                    <div class="register-two-column">
+
+                        <div class="login-input-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="login-input">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter your name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="login-input-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <div class="login-input">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="10-digit number"
+                                    maxlength="10"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="login-input-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <div class="login-input">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Location -->
+
+                    <div class="login-input-group">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <div class="login-input">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="City / District"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="register-two-column">
+
+                        <div class="login-input-group">
+
+                            <label for="registerPassword">
+                                Password
+                            </label>
+
+                            <div class="login-input">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    placeholder="Create password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Confirm Password -->
+
+                        <div class="login-input-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="login-input">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Terms -->
+
+                    <div class="terms-row">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to AgriNova's
+                                <a href="#">Terms & Conditions</a>
+                                and
+                                <a href="#">Privacy Policy</a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Register -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="registerButton">
+
+                        <span>
+                            Create Farmer Account
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- Login -->
+
+                <div class="create-account">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+
+
+                <!-- Security -->
+
+                <div class="security-message">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Your information is securely protected.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =================================================
+         COMMUNITY FEEDBACK
+    ================================================== -->
+
+    <section class="feedback-section">
+
+        <div class="feedback-heading">
+
+            <span>TRUSTED BY THE AGRINOVA COMMUNITY</span>
+
+            <h2>
+                What our users say
+            </h2>
+
+            <p>
+                Experiences from farmers, industries and
+                transport partners using AgriNova.
+            </p>
+
+        </div>
+
+
+        <div class="feedback-grid">
+
+
+            <!-- Farmer -->
+
+            <div class="feedback-card">
+
+                <div class="feedback-top">
+
+                    <div class="feedback-avatar farmer-avatar">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <div>
+                        <strong>Farmer</strong>
+                        <span>Agra, Uttar Pradesh</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="feedback-text">
+                    “AgriNova makes it easier to understand where
+                    my crop waste can be used and what value I can
+                    get from it.”
+                </p>
+
+                <div class="feedback-role">
+                    👨‍🌾 Farmer Experience
+                </div>
+
+            </div>
+
+
+
+            <!-- Industry -->
+
+            <div class="feedback-card">
+
+                <div class="feedback-top">
+
+                    <div class="feedback-avatar industry-avatar">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+
+                    <div>
+                        <strong>Industry</strong>
+                        <span>Biomass Processing</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="feedback-text">
+                    “Finding suitable agricultural residue becomes
+                    more organized when supply, quantity and
+                    logistics are considered together.”
+                </p>
+
+                <div class="feedback-role">
+                    🏭 Industry Experience
+                </div>
+
+            </div>
+
+
+
+            <!-- Transporter -->
+
+            <div class="feedback-card">
+
+                <div class="feedback-top">
+
+                    <div class="feedback-avatar transporter-avatar">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <div>
+                        <strong>Transport Partner</strong>
+                        <span>Agra Region</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="feedback-text">
+                    “Pickup requests and routes can be organized
+                    clearly, making waste collection easier to manage.”
+                </p>
+
+                <div class="feedback-role">
+                    🚚 Transport Experience
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="overall-rating">
+
+            <div class="rating-number">
+                4.8
+            </div>
+
+            <div class="rating-stars">
+                ★★★★★
+            </div>
+
+            <div class="rating-text">
+
+                <strong>
+                    Excellent community experience
+                </strong>
+
+                <span>
+                    Based on AgriNova user feedback
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         COMMON AGRINOVA FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <div class="footer-logo-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+                        <strong>AgriNova</strong>
+                        <span>Agricultural Intelligence</span>
+                    </div>
+
+                </div>
+
+                <p>
+                    Turning agricultural waste into meaningful
+                    value through intelligent matching,
+                    utilization and logistics.
+                </p>
+
+                <div class="footer-badge">
+                    🌾 Farm Waste → Value
+                </div>
+
+            </div>
+
+
+
+            <!-- Platform -->
+
+            <div class="footer-column">
+
+                <h4>Platform</h4>
+
+                <a href="#">Smart Waste Submission</a>
+                <a href="#">Waste Analysis</a>
+                <a href="#">Best Utilization</a>
+                <a href="#">Net Value</a>
+                <a href="#">Smart Matching</a>
+
+            </div>
+
+
+
+            <!-- Operations -->
+
+            <div class="footer-column">
+
+                <h4>Operations</h4>
+
+                <a href="#">Group Collection</a>
+                <a href="#">Smart Transport</a>
+                <a href="#">Waste Passport</a>
+                <a href="#">Burning Risk</a>
+                <a href="#">Impact Analytics</a>
+
+            </div>
+
+
+
+            <!-- Support -->
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <a href="#">Help Center</a>
+                <a href="#">How AgriNova Works</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 AgriNova. All rights reserved.
+            </div>
+
+            <div>
+                Built for smarter agriculture • 🌾 Farm Waste → Value
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =================================================
+         REGISTER JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        /* ================================
+           ROLE SELECTION
+        ================================= */
+
+        const roleCards =
+            document.querySelectorAll(".role-card");
+
+        const registerButton =
+            document.getElementById("registerButton");
+
+        let selectedRole = "farmer";
+
+
+        roleCards.forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                roleCards.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                card.classList.add("active");
+
+                selectedRole = card.dataset.role;
+
+                const roleName =
+                    selectedRole.charAt(0).toUpperCase() +
+                    selectedRole.slice(1);
+
+                registerButton.querySelector("span").textContent =
+                    `Create ${roleName} Account`;
+
+            });
+
+        });
+
+
+
+        /* ================================
+           REGISTER FORM
+        ================================= */
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+
+        registerForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+
+            const password =
+                document.getElementById("registerPassword").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+
+            const phone =
+                document.getElementById("phone").value;
+
+
+            /* Password check */
+
+            if (password !== confirmPassword) {
+
+                alert("Passwords do not match.");
+
+                return;
+            }
+
+
+            /* Phone check */
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+
+                alert("Please enter a valid 10-digit phone number.");
+
+                return;
+            }
+
+
+            /* Phase 1 frontend-only */
+
+            const roleName =
+                selectedRole.charAt(0).toUpperCase() +
+                selectedRole.slice(1);
+
+
+            alert(
+                `${roleName} account created successfully!`
+            );
+
+
+            window.location.href = "login.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>

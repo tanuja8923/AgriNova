@@ -1,0 +1,1170 @@
+/* =========================================================
+   AGRINOVA REGISTER PAGE
+========================================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 44% 56%;
+    background: #f7f5ee;
+}
+
+
+/* =========================================================
+   LEFT BRAND SECTION
+========================================================= */
+
+.login-brand {
+    position: relative;
+    min-height: 720px;
+    padding: 55px 8%;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(47, 107, 79, 0.45),
+            transparent 35%
+        ),
+        #123b2a;
+
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.login-brand::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    right: -180px;
+    bottom: -130px;
+}
+
+
+/* Logo */
+
+.login-logo {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login-logo-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2f6b4f;
+
+    border-radius: 13px;
+
+    font-size: 21px;
+}
+
+.login-logo strong {
+    display: block;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.login-logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #b9c8bf;
+
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+/* Brand Content */
+
+.login-brand-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 550px;
+}
+
+.login-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #d8b56a;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.login-brand-content h1 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.login-brand-content h1 span {
+    display: block;
+    color: #d8b56a;
+}
+
+.login-brand-content > p {
+    max-width: 500px;
+
+    margin: 25px 0 35px;
+
+    color: #c2cec6;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* Features */
+
+.login-features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-feature {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.feature-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: rgba(255,255,255,0.06);
+
+    border-radius: 11px;
+
+    color: #d8b56a;
+}
+
+.login-feature strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+}
+
+.login-feature span {
+    color: #9faf9f;
+    font-size: 12px;
+}
+
+.login-brand-bottom {
+    position: relative;
+    z-index: 2;
+
+    color: #9faf9f;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   REGISTER FORM SECTION
+========================================================= */
+
+.login-form-section {
+    min-height: 720px;
+
+    background: #fffdf8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 55px 7%;
+}
+
+.login-form-box {
+    width: 100%;
+    max-width: 510px;
+}
+
+
+/* Heading */
+
+.login-heading {
+    margin-bottom: 25px;
+}
+
+.login-heading > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #c79a45;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.login-heading h2 {
+    margin: 0 0 8px;
+
+    color: #123b2a;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: -0.8px;
+}
+
+.login-heading p {
+    margin: 0;
+
+    color: #78827b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ROLE SELECTION
+========================================================= */
+
+.role-section {
+    margin-bottom: 22px;
+}
+
+.role-section > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #334139;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.role-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.role-card {
+    position: relative;
+
+    min-height: 115px;
+
+    padding: 15px 12px;
+
+    border: 1.5px solid #e4e5df;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: all 0.25s ease;
+}
+
+.role-card:hover {
+    border-color: #8eae9d;
+
+    transform: translateY(-2px);
+}
+
+.role-card.active {
+    border-color: #2f6b4f;
+
+    background: #f0f6f1;
+
+    box-shadow: 0 8px 20px rgba(18,59,42,0.08);
+}
+
+.role-card-icon {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    background: #e7efe9;
+
+    color: #2f6b4f;
+}
+
+.role-card.active .role-card-icon {
+    background: #2f6b4f;
+    color: #ffffff;
+}
+
+.role-card-text strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #18372a;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+}
+
+.role-card-text span {
+    display: block;
+
+    color: #7b857e;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+.role-selected {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2f6b4f;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    opacity: 0;
+}
+
+.role-card.active .role-selected {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TWO COLUMN INPUTS
+========================================================= */
+
+.register-two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.login-input-group {
+    margin-bottom: 16px;
+}
+
+.login-input-group > label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334139;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.login-input {
+    position: relative;
+
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #dfe2dc;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+.login-input:focus-within {
+    border-color: #2f6b4f;
+
+    box-shadow:
+        0 0 0 3px rgba(47,107,79,0.08);
+}
+
+.login-input > i {
+    margin-left: 14px;
+
+    color: #879189;
+
+    font-size: 13px;
+}
+
+.login-input input {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #20352a;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+}
+
+.login-input input::placeholder {
+    color: #a3aaa5;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-row {
+    margin: 2px 0 18px;
+}
+
+.terms-row label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    color: #7b847e;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.terms-row input {
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    accent-color: #2f6b4f;
+}
+
+.terms-row a {
+    color: #2f6b4f;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.terms-row a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.login-button {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #123b2a;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.login-button:hover {
+    background: #0b2a1e;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 8px 20px rgba(18,59,42,0.18);
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.create-account {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+}
+
+.create-account span {
+    color: #7e8781;
+}
+
+.create-account a {
+    color: #2f6b4f;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security-message {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 16px;
+
+    color: #89918b;
+
+    font-size: 10px;
+}
+
+.security-message i {
+    color: #2f6b4f;
+}
+
+
+/* =========================================================
+   COMMUNITY FEEDBACK
+========================================================= */
+
+.feedback-section {
+    background: #f7f5ee;
+
+    padding: 80px 7% 75px;
+
+    border-top: 1px solid #e6e5dd;
+}
+
+.feedback-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.feedback-heading > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #c79a45;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.feedback-heading h2 {
+    margin: 0 0 10px;
+
+    color: #123b2a;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: -0.7px;
+}
+
+.feedback-heading p {
+    margin: 0;
+
+    color: #7a837d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* Feedback Grid */
+
+.feedback-grid {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.feedback-card {
+    background: #fffdf8;
+
+    border: 1px solid #e1e3dc;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    transition: 0.25s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #a6bbaa;
+
+    box-shadow:
+        0 15px 35px rgba(18,59,42,0.08);
+}
+
+
+/* Feedback User */
+
+.feedback-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 17px;
+}
+
+.feedback-avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+}
+
+.farmer-avatar {
+    background: #e5f0e7;
+    color: #2f6b4f;
+}
+
+.industry-avatar {
+    background: #f3e9d3;
+    color: #a1782f;
+}
+
+.transporter-avatar {
+    background: #e2ebee;
+    color: #426875;
+}
+
+.feedback-top strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #18372a;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+}
+
+.feedback-top span {
+    color: #89918b;
+
+    font-size: 11px;
+}
+
+
+/* Stars */
+
+.stars {
+    margin-bottom: 13px;
+
+    color: #c79a45;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+.feedback-text {
+    min-height: 90px;
+
+    margin: 0 0 18px;
+
+    color: #59645d;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+.feedback-role {
+    padding-top: 14px;
+
+    border-top: 1px solid #ecece6;
+
+    color: #78827b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* Overall Rating */
+
+.overall-rating {
+    max-width: 520px;
+
+    margin: 40px auto 0;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e3dc;
+
+    border-radius: 14px;
+}
+
+.rating-number {
+    color: #123b2a;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+}
+
+.rating-stars {
+    color: #c79a45;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+.rating-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.rating-text strong {
+    color: #334139;
+
+    font-size: 12px;
+}
+
+.rating-text span {
+    color: #8a928c;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   GREEN FOOTER
+========================================================= */
+
+.site-footer {
+    background: #123b2a;
+
+    color: #ffffff;
+
+    padding: 60px 7% 0;
+}
+
+.footer-main {
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 50px;
+}
+
+.footer-brand {
+    max-width: 360px;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+.footer-logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #2f6b4f;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.footer-logo strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+.footer-logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #aeb7b0;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.footer-brand p {
+    color: #b7c6bc;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.footer-badge {
+    display: inline-block;
+
+    padding: 9px 14px;
+
+    background: rgba(199,154,69,0.12);
+
+    border: 1px solid rgba(199,154,69,0.3);
+
+    color: #d8b56a;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Footer Columns */
+
+.footer-column h4 {
+    margin: 5px 0 20px;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #b7c6bc;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+
+    transition: 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #d8b56a;
+
+    transform: translateX(3px);
+}
+
+
+/* Footer Bottom */
+
+.footer-bottom {
+    max-width: 1400px;
+
+    margin: auto;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    padding: 25px 0 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+    color: #9eafa4;
+
+    font-size: 12px;
+}
+
+.footer-bottom div:last-child {
+    color: #c0cbc4;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        min-height: auto;
+
+        padding: 45px 8%;
+    }
+
+    .login-brand-content {
+        margin: 65px 0;
+    }
+
+    .login-form-section {
+        min-height: auto;
+
+        padding: 60px 8%;
+    }
+
+    .feedback-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .login-brand {
+        padding: 35px 25px;
+    }
+
+    .login-brand-content h1 {
+        font-size: 38px;
+    }
+
+    .login-form-section {
+        padding: 45px 25px;
+    }
+
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .role-card {
+        min-height: 78px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .role-card-icon {
+        margin-bottom: 0;
+    }
+
+    .register-two-column {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .feedback-section {
+        padding: 60px 25px;
+    }
+
+    .feedback-heading h2 {
+        font-size: 27px;
+    }
+
+    .overall-rating {
+        flex-wrap: wrap;
+
+        text-align: center;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .footer-brand {
+        max-width: none;
+    }
+
+}

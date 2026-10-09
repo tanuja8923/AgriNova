@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Net Value Analysis | AgriNova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/net-value-analysis.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="farmer-dashboard.html" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="logo-text">
+                <span>AgriNova</span>
+                <small>Waste → Value</small>
+            </div>
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html">
+                <i class="fa-solid fa-plus"></i>
+                Submit Waste
+            </a>
+
+            <a href="waste-passport.html">
+                <i class="fa-solid fa-box"></i>
+                My Batches
+            </a>
+
+            <a href="waste-analysis.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Value Analysis
+            </a>
+
+            <a href="group-collection.html">
+                <i class="fa-solid fa-truck"></i>
+                Collections
+            </a>
+
+
+            <a href="#">
+                <i class="fa-solid fa-chart-pie"></i>
+                Impact
+            </a>
+
+        </nav>
+
+
+        <div class="header-profile">
+
+            <div class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <span>Farmer</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="net-value-main">
+
+    <!-- Back -->
+    <a href="best-utilization.html" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Best Utilization
+    </a>
+
+
+    <!-- Page Intro -->
+
+    <section class="page-intro">
+
+        <span class="section-tag">
+            <i class="fa-solid fa-calculator"></i>
+            NET VALUE ANALYSIS
+        </span>
+
+        <h1>
+            See What You Can <span>Actually Earn</span>
+        </h1>
+
+        <p>
+            AgriNova calculates the expected value of your waste after
+            transport and handling costs.
+        </p>
+
+    </section>
+
+
+    <!-- ================= WASTE SNAPSHOT ================= -->
+
+    <section class="waste-snapshot">
+
+        <div class="snapshot-heading">
+
+            <div>
+                <span class="mini-label">YOUR WASTE</span>
+
+                <h2>Rice Straw</h2>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Agra
+                </p>
+            </div>
+
+            <div class="quantity-box">
+                <strong>2,000</strong>
+                <span>kg</span>
+            </div>
+
+        </div>
+
+
+        <div class="snapshot-details">
+
+            <div class="detail-item">
+
+                <span class="detail-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </span>
+
+                <div>
+                    <small>Recommended Use</small>
+                    <strong>Biomass Energy</strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-icon">
+                    <i class="fa-solid fa-location-arrow"></i>
+                </span>
+
+                <div>
+                    <small>Buyer Distance</small>
+                    <strong>12 km</strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </span>
+
+                <div>
+                    <small>Quality</small>
+                    <strong>Dry · Low Moisture</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VALUE CALCULATION ================= -->
+
+    <section class="value-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="mini-label">VALUE BREAKDOWN</span>
+
+                <h2>How Your Net Value Is Calculated</h2>
+
+                <p>
+                    The highest selling price is not always the best option.
+                    We calculate what remains after the actual costs.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="calculation-card">
+
+            <!-- Expected Revenue -->
+
+            <div class="calculation-row">
+
+                <div class="calculation-info">
+
+                    <span class="calculation-icon revenue">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </span>
+
+                    <div>
+                        <strong>Expected Revenue</strong>
+                        <small>Estimated buyer payment</small>
+                    </div>
+
+                </div>
+
+                <strong class="amount positive">
+                    ₹5,000
+                </strong>
+
+            </div>
+
+
+            <!-- Transport -->
+
+            <div class="calculation-row">
+
+                <div class="calculation-info">
+
+                    <span class="calculation-icon transport">
+                        <i class="fa-solid fa-truck"></i>
+                    </span>
+
+                    <div>
+                        <strong>Transport Cost</strong>
+                        <small>Estimated pickup & delivery cost</small>
+                    </div>
+
+                </div>
+
+                <strong class="amount negative">
+                    − ₹800
+                </strong>
+
+            </div>
+
+
+            <!-- Handling -->
+
+            <div class="calculation-row">
+
+                <div class="calculation-info">
+
+                    <span class="calculation-icon handling">
+                        <i class="fa-solid fa-box-open"></i>
+                    </span>
+
+                    <div>
+                        <strong>Handling Cost</strong>
+                        <small>Loading / basic handling</small>
+                    </div>
+
+                </div>
+
+                <strong class="amount negative">
+                    − ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="calculation-divider"></div>
+
+
+            <!-- Net Value -->
+
+            <div class="net-value-row">
+
+                <div>
+
+                    <span class="net-label">
+                        ESTIMATED NET VALUE
+                    </span>
+
+                    <h3>
+                        ₹4,200
+                    </h3>
+
+                    <p>
+                        Amount remaining after estimated costs
+                    </p>
+
+                </div>
+
+
+                <div class="value-badge">
+
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                    <span>
+                        Best Practical Value
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FORMULA ================= -->
+
+    <section class="formula-section">
+
+        <div class="formula-card">
+
+            <div class="formula-icon">
+                <i class="fa-solid fa-function"></i>
+            </div>
+
+            <div class="formula-content">
+
+                <span class="mini-label">
+                    AGRINOVA DECISION ENGINE
+                </span>
+
+                <h2>
+                    Net Value = Expected Revenue − Total Costs
+                </h2>
+
+                <p>
+                    AgriNova compares utilization options using expected
+                    revenue, transport distance, handling requirements,
+                    quantity and local demand.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COMPARISON ================= -->
+
+    <section class="comparison-section">
+
+        <div class="section-heading">
+
+            <span class="mini-label">
+                SMART COMPARISON
+            </span>
+
+            <h2>
+                Why This Is the Better Option
+            </h2>
+
+            <p>
+                A higher selling price does not automatically mean higher
+                earnings for the farmer.
+            </p>
+
+        </div>
+
+
+        <div class="comparison-grid">
+
+
+            <!-- Biomass -->
+
+            <div class="comparison-card recommended">
+
+                <div class="comparison-top">
+
+                    <div>
+                        <span class="recommended-label">
+                            RECOMMENDED
+                        </span>
+
+                        <h3>Biomass Energy</h3>
+                    </div>
+
+                    <i class="fa-solid fa-check-circle"></i>
+
+                </div>
+
+                <div class="comparison-values">
+
+                    <div>
+                        <small>Revenue</small>
+                        <strong>₹5,000</strong>
+                    </div>
+
+                    <div>
+                        <small>Transport</small>
+                        <strong>₹800</strong>
+                    </div>
+
+                    <div>
+                        <small>Net Value</small>
+                        <strong>₹4,200</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Paper -->
+
+            <div class="comparison-card">
+
+                <div class="comparison-top">
+
+                    <div>
+                        <span class="alternative-label">
+                            ALTERNATIVE
+                        </span>
+
+                        <h3>Paper Processing</h3>
+                    </div>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                </div>
+
+                <div class="comparison-values">
+
+                    <div>
+                        <small>Revenue</small>
+                        <strong>₹6,000</strong>
+                    </div>
+
+                    <div>
+                        <small>Transport</small>
+                        <strong>₹2,500</strong>
+                    </div>
+
+                    <div>
+                        <small>Net Value</small>
+                        <strong>₹3,500</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Compost -->
+
+            <div class="comparison-card">
+
+                <div class="comparison-top">
+
+                    <div>
+                        <span class="alternative-label">
+                            ALTERNATIVE
+                        </span>
+
+                        <h3>Organic Compost</h3>
+                    </div>
+
+                    <i class="fa-solid fa-recycle"></i>
+
+                </div>
+
+                <div class="comparison-values">
+
+                    <div>
+                        <small>Revenue</small>
+                        <strong>₹4,000</strong>
+                    </div>
+
+                    <div>
+                        <small>Transport</small>
+                        <strong>₹400</strong>
+                    </div>
+
+                    <div>
+                        <small>Net Value</small>
+                        <strong>₹3,600</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="action-section">
+
+        <div class="action-content">
+
+            <div class="action-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div>
+
+                <span class="mini-label">
+                    NEXT STEP
+                </span>
+
+                <h2>
+                    Ready to move your waste?
+                </h2>
+
+                <p>
+                    AgriNova can now help organize collection and connect
+                    the batch with the selected utilization pathway.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a href="#" class="continue-btn" id="continueBtn">
+            Continue to Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>AgriNova</span>
+            </div>
+
+            <p>
+                Turning agricultural waste into measurable value.
+            </p>
+
+            <strong class="developers">
+                🌾 Waste → Value
+            </strong>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="farmer-dashboard.html">Dashboard</a>
+            <a href="smart-waste-submission.html">Submit Waste</a>
+            <a href="#">My Batches</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Operations</h4>
+
+            <a href="#">Collections</a>
+            <a href="#">Waste Passport</a>
+            <a href="#">Impact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Support</h4>
+
+            <a href="#">Help Center</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AgriNova. All rights reserved.
+        </span>
+
+        <span>
+            Smart Waste → Smart Value
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- JavaScript -->
+<script src="js/net-value-analysis.js"></script>
+
+</body>
+</html>

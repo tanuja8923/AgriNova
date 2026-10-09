@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transport Dashboard | AgriNova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/transport-dashboard.css">
+</head>
+<script>
+    const loggedIn =
+        sessionStorage.getItem("agrinovaLoggedIn");
+
+    const role =
+        sessionStorage.getItem("agrinovaRole");
+
+    if (
+        loggedIn !== "true" ||
+        role !== "transporter"
+    ) {
+        alert("Please login as Transport Partner first.");
+        window.location.href = "login.html";
+    }
+</script>
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="main-header">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>AgriNova</h2>
+                <span>Waste → Value</span>
+            </div>
+        </div>
+
+
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html">
+                <i class="fa-solid fa-plus"></i>
+                Submit Waste
+            </a>
+
+            <a href="best-utilization.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Value Analysis
+            </a>
+
+            <a href="group-collection.html">
+                <i class="fa-solid fa-layer-group"></i>
+                Collections
+            </a>
+
+            <a href="transport-dashboard.html" class="active">
+                <i class="fa-solid fa-truck"></i>
+                Transport
+            </a>
+
+        </nav>
+<button class="logout-btn" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</button>
+
+        <div class="header-profile">
+
+            <div class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="profile-info">
+                <strong>Transport Partner</strong>
+                <span>Agra Region</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="transport-main">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-intro">
+
+            <div class="intro-content">
+
+                <span class="eyebrow">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    TRANSPORT OPERATIONS
+                </span>
+
+                <h1>
+                    Move waste where<br>
+                    <span>value is waiting.</span>
+                </h1>
+
+                <p>
+                    Manage assigned pickups, follow optimized routes,
+                    and deliver agricultural waste to the right destination.
+                </p>
+
+            </div>
+
+
+            <div class="intro-status">
+
+                <div class="online-dot"></div>
+
+                <div>
+                    <strong>You're Online</strong>
+                    <span>Ready for pickup requests</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="transport-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div>
+                    <span>New Pickups</span>
+                    <strong>04</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+
+                <div>
+                    <span>Today's Distance</span>
+                    <strong>48 km</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-weight-hanging"></i>
+                </div>
+
+                <div>
+                    <span>Waste Moving</span>
+                    <strong>3.8 T</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card highlight">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+                    <span>Estimated Earnings</span>
+                    <strong>₹2,450</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIVE PICKUP ================= -->
+
+        <section class="active-pickup-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        ACTIVE ASSIGNMENT
+                    </span>
+
+                    <h2>Current Pickup</h2>
+                </div>
+
+                <span class="status-badge assigned">
+                    <i class="fa-solid fa-circle"></i>
+                    Pickup Assigned
+                </span>
+
+            </div>
+
+
+            <div class="active-pickup-card">
+
+                <!-- Pickup information -->
+
+                <div class="pickup-route">
+
+                    <div class="location-point pickup-point">
+
+                        <div class="point-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <span>Pickup From</span>
+                            <strong>Agra, Uttar Pradesh</strong>
+                            <small>4 Farmers · 1,000 kg Rice Straw</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="route-line">
+
+                        <span></span>
+
+                        <div class="route-distance">
+                            <i class="fa-solid fa-road"></i>
+                            14 km
+                        </div>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="location-point destination-point">
+
+                        <div class="point-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                        <div>
+                            <span>Deliver To</span>
+                            <strong>Biomass Energy Unit</strong>
+                            <small>Biomass processing facility</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pickup details -->
+
+                <div class="pickup-details">
+
+                    <div class="detail-item">
+                        <span>Pickup Date</span>
+                        <strong>16 September</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Pickup Time</span>
+                        <strong>10:30 AM</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Waste</span>
+                        <strong>Rice Straw</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Quantity</span>
+                        <strong>1,000 kg</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="pickup-actions">
+
+                   <button class="view-route-btn"
+        onclick="window.location.href='map-route.html'">
+    <i class="fa-solid fa-route"></i>
+    View Route
+</button>
+
+                    <button class="primary-btn" id="startPickupBtn">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Start Pickup
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PICKUP REQUESTS ================= -->
+
+        <section class="pickup-requests-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        AVAILABLE REQUESTS
+                    </span>
+
+                    <h2>Pickup Requests</h2>
+
+                    <p>
+                        Nearby collection requests that match your vehicle capacity.
+                    </p>
+                </div>
+
+                <button class="filter-btn" id="filterBtn">
+                    <i class="fa-solid fa-sliders"></i>
+                    Filter
+                </button>
+
+            </div>
+
+
+            <div class="request-grid">
+
+
+                <!-- Request 1 -->
+
+                <article class="request-card">
+
+                    <div class="request-top">
+
+                        <span class="request-id">
+                            AGRI-2026-00131
+                        </span>
+
+                        <span class="request-status">
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <div class="request-title">
+
+                        <div class="request-icon">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                        </div>
+
+                        <div>
+                            <h3>Rice Straw</h3>
+                            <span>Group Collection</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-info">
+
+                        <div>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <span>1,500 kg</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Bharatpur</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-road"></i>
+                            <span>28 km</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-footer">
+
+                        <div class="earning">
+                            <span>Estimated Earnings</span>
+                            <strong>₹850</strong>
+                        </div>
+
+                        <button class="accept-btn">
+                            Accept
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Request 2 -->
+
+                <article class="request-card">
+
+                    <div class="request-top">
+
+                        <span class="request-id">
+                            AGRI-2026-00144
+                        </span>
+
+                        <span class="request-status">
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <div class="request-title">
+
+                        <div class="request-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                        <div>
+                            <h3>Wheat Straw</h3>
+                            <span>Individual Collection</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-info">
+
+                        <div>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <span>1,200 kg</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Mathura</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-road"></i>
+                            <span>34 km</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-footer">
+
+                        <div class="earning">
+                            <span>Estimated Earnings</span>
+                            <strong>₹1,050</strong>
+                        </div>
+
+                        <button class="accept-btn">
+                            Accept
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Request 3 -->
+
+                <article class="request-card">
+
+                    <div class="request-top">
+
+                        <span class="request-id">
+                            AGRI-2026-00152
+                        </span>
+
+                        <span class="request-status">
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <div class="request-title">
+
+                        <div class="request-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div>
+                            <h3>Sugarcane Bagasse</h3>
+                            <span>Industry Collection</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-info">
+
+                        <div>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <span>2,000 kg</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Fatehpur Sikri</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-road"></i>
+                            <span>22 km</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-footer">
+
+                        <div class="earning">
+                            <span>Estimated Earnings</span>
+                            <strong>₹750</strong>
+                        </div>
+
+                        <button class="accept-btn">
+                            Accept
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TODAY'S JOURNEY ================= -->
+
+        <section class="journey-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        TODAY'S JOURNEY
+                    </span>
+
+                    <h2>Pickup Progress</h2>
+                </div>
+
+                <span class="journey-date">
+                    16 September 2026
+                </span>
+
+            </div>
+
+
+            <div class="journey-card">
+
+                <div class="journey-step completed">
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div>
+                        <strong>Pickup Assigned</strong>
+                        <span>10:00 AM</span>
+                    </div>
+
+                </div>
+
+
+                <div class="journey-connector completed"></div>
+
+
+                <div class="journey-step current">
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <div>
+                        <strong>On the Way</strong>
+                        <span>Current Stage</span>
+                    </div>
+
+                </div>
+
+
+                <div class="journey-connector"></div>
+
+
+                <div class="journey-step">
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <strong>Waste Collected</strong>
+                        <span>Pending</span>
+                    </div>
+
+                </div>
+
+
+                <div class="journey-connector"></div>
+
+
+                <div class="journey-step">
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+
+                    <div>
+                        <strong>Delivered</strong>
+                        <span>Pending</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VEHICLE SECTION ================= -->
+
+        <section class="vehicle-section">
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <div class="vehicle-info">
+
+                    <span>YOUR VEHICLE</span>
+
+                    <h3>Light Commercial Vehicle</h3>
+
+                    <p>
+                        Available capacity:
+                        <strong>2,500 kg</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="vehicle-capacity">
+
+                    <div class="capacity-header">
+                        <span>Current Load</span>
+                        <strong>1,000 / 2,500 kg</strong>
+                    </div>
+
+                    <div class="capacity-bar">
+                        <span style="width: 40%;"></span>
+                    </div>
+
+                    <small>
+                        40% capacity used
+                    </small>
+
+                </div>
+
+
+                <button class="outline-btn" id="vehicleSettingsBtn">
+                    <i class="fa-solid fa-gear"></i>
+                    Vehicle Settings
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SMART ROUTE BANNER ================= -->
+
+        <section class="route-banner">
+
+            <div class="route-banner-icon">
+                <i class="fa-solid fa-route"></i>
+            </div>
+
+            <div class="route-banner-content">
+
+                <span>AGRI NOVA SMART ROUTE</span>
+
+                <h2>
+                    Fewer empty kilometres.
+                    More efficient pickups.
+                </h2>
+
+                <p>
+                    AgriNova combines nearby collection requests to
+                    reduce unnecessary travel and improve transport efficiency.
+                </p>
+
+            </div>
+
+            <button class="primary-btn" id="optimizeRouteBtn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Optimize Route
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="main-footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <i class="fa-solid fa-wheat-awn"></i>
+
+                    <h3>AgriNova</h3>
+
+                </div>
+
+                <p>
+                    Turning agricultural waste into measurable value.
+                </p>
+
+                <div class="footer-value">
+                    <span>🌾</span>
+                    <strong>Waste → Value</strong>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Platform</h4>
+
+                <a href="#">Smart Matching</a>
+                <a href="#">Value Analysis</a>
+                <a href="#">Waste Passport</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Operations</h4>
+
+                <a href="#">Collections</a>
+                <a href="#">Transport</a>
+                <a href="#">Route Planning</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <a href="#">Help Center</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AgriNova. All rights reserved.
+            </span>
+
+            <span>
+                Built for a cleaner, more valuable agriculture ecosystem.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Page JS -->
+    <script src="js/transport-dashboard.js"></script>
+
+</body>
+</html>

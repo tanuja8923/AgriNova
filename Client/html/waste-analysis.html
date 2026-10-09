@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriNova — Waste Analysis</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/waste-analysis.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <a href="farmer-dashboard.html" class="main-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div class="logo-text">
+                <strong>AgriNova</strong>
+                <span>Farm Waste → Value</span>
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html">
+                Submit Waste
+            </a>
+
+            <a href="#">
+                My Batches
+            </a>
+
+            <a href="#" class="active">
+                Value Analysis
+            </a>
+
+            <a href="#">
+                Collections
+            </a>
+
+            <a href="#">
+                Waste Passport
+            </a>
+
+            <a href="#">
+                Impact
+            </a>
+
+        </nav>
+
+
+        <!-- HEADER ACTIONS -->
+        <div class="header-actions">
+
+            <div class="language-selector">
+                <i class="fa-solid fa-globe"></i>
+                <span>EN</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+
+            <div class="profile-menu">
+
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="profile-info">
+                    <strong>Farmer</strong>
+                    <span>AgriNova User</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="analysis-main">
+
+    <div class="analysis-container">
+
+
+        <!-- BACK -->
+        <a href="farmer-dashboard.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Dashboard
+        </a>
+
+
+        <!-- PAGE INTRO -->
+        <section class="page-intro">
+
+            <span class="page-eyebrow">
+                WASTE ANALYSIS
+            </span>
+
+            <h1>
+                Let's understand the value<br>
+                of your agricultural waste.
+            </h1>
+
+            <p>
+                AgriNova analyzes your waste, nearby demand,
+                quality and logistics to identify the most
+                practical utilization pathway.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYSIS SUMMARY
+        ================================================= -->
+
+        <section class="analysis-summary">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="card-eyebrow">
+                        YOUR WASTE
+                    </span>
+
+                    <h2>Waste Analysis Summary</h2>
+                </div>
+
+                <span class="analysis-status">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Analysis Ready
+                </span>
+
+            </div>
+
+
+            <div class="waste-summary-grid">
+
+
+                <!-- WASTE TYPE -->
+                <div class="summary-item">
+
+                    <div class="summary-icon green">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <div>
+                        <span>Waste Type</span>
+                        <strong>Rice Straw</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+                <div class="summary-item">
+
+                    <div class="summary-icon gold">
+                        <i class="fa-solid fa-weight-hanging"></i>
+                    </div>
+
+                    <div>
+                        <span>Quantity</span>
+                        <strong>2,000 kg</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+                <div class="summary-item">
+
+                    <div class="summary-icon blue">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>Location</span>
+                        <strong>Agra</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- QUALITY -->
+                <div class="summary-item">
+
+                    <div class="summary-icon brown">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <span>Quality</span>
+                        <strong>Dry · Low Moisture</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYSIS FACTORS
+        ================================================= -->
+
+        <section class="analysis-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="card-eyebrow">
+                        INTELLIGENCE
+                    </span>
+
+                    <h2>What AgriNova Considered</h2>
+                </div>
+
+            </div>
+
+
+            <div class="factor-grid">
+
+
+                <!-- DEMAND -->
+                <div class="factor-card">
+
+                    <div class="factor-icon green">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <strong>Nearby Demand</strong>
+
+                        <p>
+                            Industries currently looking
+                            for rice straw near your location.
+                        </p>
+                    </div>
+
+                    <span class="factor-status">
+                        Considered
+                    </span>
+
+                </div>
+
+
+                <!-- DISTANCE -->
+                <div class="factor-card">
+
+                    <div class="factor-icon blue">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <div>
+                        <strong>Transport Distance</strong>
+
+                        <p>
+                            Distance between your waste
+                            and potential utilization units.
+                        </p>
+                    </div>
+
+                    <span class="factor-status">
+                        Considered
+                    </span>
+
+                </div>
+
+
+                <!-- QUALITY -->
+                <div class="factor-card">
+
+                    <div class="factor-icon gold">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <strong>Waste Quality</strong>
+
+                        <p>
+                            Dryness and moisture level
+                            affect suitable utilization paths.
+                        </p>
+                    </div>
+
+                    <span class="factor-status">
+                        Considered
+                    </span>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+                <div class="factor-card">
+
+                    <div class="factor-icon brown">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                    <div>
+                        <strong>Available Quantity</strong>
+
+                        <p>
+                            Quantity is compared with
+                            industry requirements and pickup viability.
+                        </p>
+                    </div>
+
+                    <span class="factor-status">
+                        Considered
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DEMAND SNAPSHOT
+        ================================================= -->
+
+        <section class="analysis-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="card-eyebrow">
+                        LOCAL MARKET
+                    </span>
+
+                    <h2>Nearby Demand Snapshot</h2>
+                </div>
+
+                <a href="#" class="view-link">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="demand-table">
+
+
+                <div class="demand-row demand-head">
+
+                    <span>Industry</span>
+                    <span>Requirement</span>
+                    <span>Distance</span>
+                    <span>Status</span>
+
+                </div>
+
+
+                <div class="demand-row">
+
+                    <div class="industry-name">
+                        <div class="industry-icon biomass">
+                            <i class="fa-solid fa-fire-flame-simple"></i>
+                        </div>
+
+                        <strong>Biomass Energy Unit</strong>
+                    </div>
+
+                    <span>50 Ton</span>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        12 km
+                    </span>
+
+                    <span class="demand-status active">
+                        High Demand
+                    </span>
+
+                </div>
+
+
+                <div class="demand-row">
+
+                    <div class="industry-name">
+                        <div class="industry-icon compost">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <strong>Organic Compost Unit</strong>
+                    </div>
+
+                    <span>20 Ton</span>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        18 km
+                    </span>
+
+                    <span class="demand-status">
+                        Available
+                    </span>
+
+                </div>
+
+
+                <div class="demand-row">
+
+                    <div class="industry-name">
+                        <div class="industry-icon paper">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <strong>Paper Processing Unit</strong>
+                    </div>
+
+                    <span>35 Ton</span>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        26 km
+                    </span>
+
+                    <span class="demand-status">
+                        Available
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYSIS PROGRESS
+        ================================================= -->
+
+        <section class="analysis-progress">
+
+            <div class="progress-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <div class="progress-content">
+
+                <span class="card-eyebrow">
+                    AGRINOVA DECISION ENGINE
+                </span>
+
+                <h2>
+                    Your waste has been analyzed.
+                </h2>
+
+                <p>
+                    We compared utilization options based on
+                    demand, distance, transport cost and expected value.
+                </p>
+
+            </div>
+
+            <a href="best-utilization.html" class="continue-btn">
+                See Best Utilization
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div>
+                    <strong>AgriNova</strong>
+                    <span>Farm Waste → Value</span>
+                </div>
+
+            </div>
+
+            <p>
+                Turning agricultural waste into
+                practical economic value through
+                intelligent matching and logistics.
+            </p>
+
+            <span class="footer-badge">
+                🌾 Waste → Value
+            </span>
+
+        </div>
+
+
+        <!-- PLATFORM -->
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="farmer-dashboard.html">Farmer Dashboard</a>
+            <a href="smart-waste-submission.html">Submit Waste</a>
+            <a href="#">Value Analysis</a>
+            <a href="#">Waste Passport</a>
+
+        </div>
+
+
+        <!-- OPERATIONS -->
+        <div class="footer-column">
+
+            <h4>Operations</h4>
+
+            <a href="#">Industry</a>
+            <a href="#">Transport</a>
+            <a href="#">Collections</a>
+            <a href="#">Smart Matching</a>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+        <div class="footer-column">
+
+            <h4>Support</h4>
+
+            <a href="#">How It Works</a>
+            <a href="#">Help Center</a>
+            <a href="#">Contact</a>
+            <a href="#">About AgriNova</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div>
+            © 2026 AgriNova. Farm Waste → Value.
+        </div>
+
+        <div>
+            Built for farmers, industries & a cleaner future.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/waste-analysis.js"></script>
+
+</body>
+</html>

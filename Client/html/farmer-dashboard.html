@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriNova | Farmer Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../css/farmer-dashboard.css">
+</head>
+<script>
+    const loggedIn =
+        sessionStorage.getItem("agrinovaLoggedIn");
+
+    const role =
+        sessionStorage.getItem("agrinovaRole");
+
+    if (
+        loggedIn !== "true" ||
+        role !== "farmer"
+    ) {
+        alert("Please login as Farmer first.");
+        window.location.href = "login.html";
+    }
+</script>
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="main-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="logo-text">
+                <strong>AgriNova</strong>
+                <span>Farm Waste → Value</span>
+            </div>
+
+        </a>
+
+
+        <!-- Farmer Navigation -->
+        <nav class="main-nav">
+
+            <a href="farmer-dashboard.html" class="active">
+                Dashboard
+            </a>
+
+            <a href="smart-waste-submission.html">
+                Submit Waste
+            </a>
+
+            <a href="waste-passport.html">
+                My Batches
+            </a>
+
+            <a href="waste-analysis.html">
+                Value Analysis
+            </a>
+
+            <a href="group-collection.html">
+                Collections
+            </a>
+
+            <a href="#">
+                Impact
+            </a>
+
+        </nav>
+        <button class="logout-btn" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</button>
+
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+
+    <!-- LANGUAGE -->
+    <div class="language-selector" id="languageSelector">
+
+        <i class="fa-solid fa-language"></i>
+
+        <span id="currentLanguage">EN</span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+        <!-- Language Dropdown -->
+        <div class="language-dropdown" id="languageDropdown">
+
+            <button type="button" data-lang="en">
+                English
+            </button>
+
+            <button type="button" data-lang="hi">
+                हिंदी
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE -->
+    <div class="profile-menu" id="profileMenu">
+
+        <div class="profile-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="profile-info">
+            <strong>Farmer</strong>
+            <span>Agra, UP</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+    </div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN DASHBOARD
+===================================================== -->
+
+<main class="dashboard-main">
+
+    <div class="dashboard-container">
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================== -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <span class="dashboard-eyebrow">
+                    FARMER CONTROL CENTER
+                </span>
+
+                <h1>
+                    Welcome back, <span>Farmer</span> 👋
+                </h1>
+
+                <p>
+                    Manage your agricultural waste, discover its best value,
+                    track collections and see your environmental impact —
+                    all from one place.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-date">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <div>
+                    <span>Today</span>
+                    <strong>13 September 2026</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SMART WASTE SUBMISSION
+        ================================================== -->
+
+        <section class="waste-action-card">
+
+            <div class="waste-action-content">
+
+                <div class="action-icon">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+
+                <div>
+
+                    <span class="action-label">
+                        SMART WASTE SUBMISSION
+                    </span>
+
+                    <h2>
+                        Tell us what you have
+                    </h2>
+
+                    <p>
+                        Simply speak or enter your waste details.
+                        AgriNova will find where it creates the most value.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="voice-submit-btn" id="voiceSubmitBtn">
+
+                <i class="fa-solid fa-microphone"></i>
+
+                <span>
+                    Speak / Submit Waste
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+        ================================================== -->
+
+        <section class="dashboard-card quick-actions-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="card-eyebrow">
+                        QUICK ACTIONS
+                    </span>
+
+                    <h3>
+                        What would you like to do?
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions-grid">
+
+
+                <button class="quick-action" onclick="window.location.href='smart-waste-submission.html'"> 
+ 
+    <div class="quick-action-icon green"> 
+        <i class="fa-solid fa-plus"></i> 
+    </div> 
+ 
+    <div> 
+        <strong>Submit Waste</strong> 
+        <span>Add a new waste batch</span> 
+    </div> 
+ 
+    <i class="fa-solid fa-arrow-right"></i> 
+ 
+</button>
+
+
+                <button class="quick-action" onclick="window.location.href='best-utilization.html'">
+
+    <div class="quick-action-icon gold">
+        <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <div>
+        <strong>Check Best Value</strong>
+        <span>Compare utilization options</span>
+    </div>
+
+    <i class="fa-solid fa-arrow-right"></i>
+
+</button>
+                </button>
+
+<button class="quick-action" onclick="window.location.href='group-collection.html'">
+
+    <div class="quick-action-icon blue">
+        <i class="fa-solid fa-truck"></i>
+    </div>
+
+    <div>
+        <strong>Track Collection</strong>
+        <span>View pickup status</span>
+    </div>
+
+    <i class="fa-solid fa-arrow-right"></i>
+
+</button>
+<button class="quick-action" onclick="window.location.href='waste-passport.html'">
+
+    <div class="quick-action-icon brown">
+        <i class="fa-solid fa-qrcode"></i>
+    </div>
+
+    <div>
+        <strong>Waste Passport</strong>
+        <span>View batch identity</span>
+    </div>
+
+    <i class="fa-solid fa-arrow-right"></i>
+
+</button>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             KEY STATISTICS
+        ================================================== -->
+
+        <section class="dashboard-stats">
+
+
+            <!-- Waste Submitted -->
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon waste-icon">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <span class="stat-status green">
+                        +12%
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Waste Submitted
+                </span>
+
+                <strong class="stat-value">
+                    2.0 <small>Ton</small>
+                </strong>
+
+                <span class="stat-description">
+                    This season
+                </span>
+
+            </div>
+
+
+            <!-- Net Value -->
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon value-icon">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+                    <span class="stat-status green">
+                        Best Match
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Potential Net Value
+                </span>
+
+                <strong class="stat-value">
+                    ₹4,200
+                </strong>
+
+                <span class="stat-description">
+                    After estimated transport
+                </span>
+
+            </div>
+
+
+            <!-- Collection -->
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon collection-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <span class="stat-status">
+                        Scheduled
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Next Collection
+                </span>
+
+                <strong class="stat-value">
+                    16 <small>Sep</small>
+                </strong>
+
+                <span class="stat-description">
+                    Rice Straw · 2,000 kg
+                </span>
+
+            </div>
+
+
+            <!-- Impact -->
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon impact-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <span class="stat-status green">
+                        Positive
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Waste Diverted
+                </span>
+
+                <strong class="stat-value">
+                    2.0 <small>Ton</small>
+                </strong>
+
+                <span class="stat-description">
+                    From burning / disposal
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WASTE OVERVIEW
+        ================================================== -->
+
+        <section class="dashboard-card waste-overview-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="card-eyebrow">
+                        MY WASTE OVERVIEW
+                    </span>
+
+                    <h3>
+                        Your waste journey
+                    </h3>
+                </div>
+
+                <button class="card-action">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="waste-overview-grid">
+
+
+                <div class="overview-box">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <strong>3</strong>
+
+                    <span>Total Batches</span>
+
+                </div>
+
+
+                <div class="overview-box">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+
+                    <strong>2</strong>
+
+                    <span>Matched</span>
+
+                </div>
+
+
+                <div class="overview-box">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <strong>1</strong>
+
+                    <span>Collected</span>
+
+                </div>
+
+
+                <div class="overview-box">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <strong>1</strong>
+
+                    <span>Delivered</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN GRID
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- =============================================
+                 ACTIVE BATCH
+            ============================================== -->
+
+            <div class="dashboard-card batch-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            ACTIVE WASTE BATCH
+                        </span>
+
+                        <h3>
+                            Rice Straw
+                        </h3>
+
+                    </div>
+
+                    <button class="card-action">
+                        Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="batch-details">
+
+                    <div class="batch-material">
+
+                        <div class="material-icon">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Rice Straw
+                            </strong>
+
+                            <span>
+                                Batch ID: AGRI-2026-00125
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="batch-quantity">
+
+                        <span>
+                            Quantity
+                        </span>
+
+                        <strong>
+                            2,000 kg
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="batch-progress">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Collection Progress
+                        </span>
+
+                        <strong>
+                            75%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="batch-status-row">
+
+
+                    <div class="status-step completed">
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <span>
+                            Submitted
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-line completed-line"></div>
+
+
+                    <div class="status-step completed">
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <span>
+                            Matched
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-line active-line"></div>
+
+
+                    <div class="status-step active">
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <span>
+                            Pickup
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-line"></div>
+
+
+                    <div class="status-step">
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <span>
+                            Delivered
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 BEST UTILIZATION
+            ============================================== -->
+
+            <div class="dashboard-card utilization-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            AGRINOVA INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Best Utilization
+                        </h3>
+
+                    </div>
+
+                    <div class="intelligence-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <div class="recommendation-main">
+
+                        <div class="recommendation-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Biomass Energy
+                            </strong>
+
+                            <span>
+                                Best practical value for this batch
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation-value">
+
+                        <span>
+                            Estimated Net Value
+                        </span>
+
+                        <strong>
+                            ₹4,200
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alternative-list">
+
+                    <div class="alternative">
+
+                        <span>
+                            Paper Industry
+                        </span>
+
+                        <strong>
+                            ₹3,500
+                        </strong>
+
+                    </div>
+
+
+                    <div class="alternative">
+
+                        <span>
+                            Composting
+                        </span>
+
+                        <strong>
+                            ₹3,600
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button class="view-analysis-btn"  onclick="window.location.href='net-value-analysis.html'">
+
+                    View Full Value Analysis
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 UPCOMING COLLECTION
+            ============================================== -->
+
+            <div class="dashboard-card collection-detail-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            UPCOMING COLLECTION
+                        </span>
+
+                        <h3>
+                            Pickup Schedule
+                        </h3>
+
+                    </div>
+
+                    <button class="card-action">
+                        Track
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="collection-detail">
+
+                    <div class="collection-date-box">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            16
+                        </strong>
+
+                    </div>
+
+
+                    <div class="collection-info">
+
+                        <strong>
+                            Rice Straw Collection
+                        </strong>
+
+                        <span>
+                            2,000 kg · Agra
+                        </span>
+
+                        <span class="collection-status">
+                            <i class="fa-solid fa-circle"></i>
+                            Pickup Assigned
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="collection-meta">
+
+                    <div>
+                        <i class="fa-solid fa-truck"></i>
+                        <span>Transport arranged</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Nearby industry</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 BURNING RISK
+            ============================================== -->
+
+            <div class="dashboard-card burning-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            EARLY INTERVENTION
+                        </span>
+
+                        <h3>
+                            Burning Risk
+                        </h3>
+
+                    </div>
+
+                    <div class="risk-icon">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="risk-content">
+
+                    <div class="risk-level">
+
+                        <span>
+                            CURRENT RISK
+                        </span>
+
+                        <strong>
+                            LOW
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-meter">
+
+                        <div class="risk-meter-fill"></div>
+
+                    </div>
+
+
+                    <p>
+                        Your submitted waste already has a potential
+                        utilization pathway and collection option.
+                        No immediate disposal pressure detected.
+                    </p>
+
+
+                    <div class="risk-action">
+
+                        <i class="fa-solid fa-shield-heart"></i>
+
+                        <span>
+                            Keep your waste ready for collection.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NEARBY DEMAND
+        ================================================== -->
+
+        <section class="dashboard-card demand-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="card-eyebrow">
+                        LOCAL DEMAND
+                    </span>
+
+                    <h3>
+                        Nearby Industries Looking for Waste
+                    </h3>
+
+                </div>
+
+                <button class="card-action">
+                    Explore Demand
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="demand-grid">
+
+
+                <div class="demand-item">
+
+                    <div class="demand-icon biomass">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div class="demand-info">
+
+                        <strong>
+                            Biomass Energy Unit
+                        </strong>
+
+                        <span>
+                            Rice Straw · Dry Quality
+                        </span>
+
+                        <small>
+                            <i class="fa-solid fa-location-dot"></i>
+                            12 km away
+                        </small>
+
+                    </div>
+
+                    <div class="demand-quantity">
+
+                        <strong>
+                            50 Ton
+                        </strong>
+
+                        <span>
+                            Required
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="demand-item">
+
+                    <div class="demand-icon compost">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div class="demand-info">
+
+                        <strong>
+                            Organic Compost Unit
+                        </strong>
+
+                        <span>
+                            Crop Residue · Mixed
+                        </span>
+
+                        <small>
+                            <i class="fa-solid fa-location-dot"></i>
+                            18 km away
+                        </small>
+
+                    </div>
+
+                    <div class="demand-quantity">
+
+                        <strong>
+                            20 Ton
+                        </strong>
+
+                        <span>
+                            Required
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="demand-item">
+
+                    <div class="demand-icon paper">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <div class="demand-info">
+
+                        <strong>
+                            Paper Processing Unit
+                        </strong>
+
+                        <span>
+                            Wheat / Rice Straw
+                        </span>
+
+                        <small>
+                            <i class="fa-solid fa-location-dot"></i>
+                            26 km away
+                        </small>
+
+                    </div>
+
+                    <div class="demand-quantity">
+
+                        <strong>
+                            35 Ton
+                        </strong>
+
+                        <span>
+                            Required
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WASTE PASSPORT + RECENT ACTIVITY
+        ================================================== -->
+
+        <section class="dashboard-grid bottom-grid">
+
+
+            <!-- Waste Passport -->
+
+            <div class="dashboard-card passport-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            TRACEABILITY
+                        </span>
+
+                        <h3>
+                            Waste Passport
+                        </h3>
+
+                    </div>
+
+                    <div class="passport-icon">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="passport-content">
+
+
+                    <div class="passport-qr">
+
+                        <div class="fake-qr">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="passport-details">
+
+                        <span>
+                            BATCH ID
+                        </span>
+
+                        <strong>
+                            AGRI-2026-00125
+                        </strong>
+
+
+                        <div class="passport-row">
+                            <span>Material</span>
+                            <strong>Rice Straw</strong>
+                        </div>
+
+                        <div class="passport-row">
+                            <span>Quantity</span>
+                            <strong>1,000 kg</strong>
+                        </div>
+
+                        <div class="passport-row">
+                            <span>Quality</span>
+                            <strong>Dry · Low Moisture</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="view-passport-btn" onclick="window.location.href='waste-passport.html'">
+
+                    View Full Passport
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Recent Activity -->
+
+            <div class="dashboard-card activity-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            RECENT ACTIVITY
+                        </span>
+
+                        <h3>
+                            Latest Updates
+                        </h3>
+
+                    </div>
+
+                    <button class="card-action"  onclick="window.location.href='notifications.html'">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon match">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Buyer matched
+                            </strong>
+
+                            <span>
+                                Biomass Energy Unit matched your batch
+                            </span>
+
+                        </div>
+
+                        <time>
+                            2h ago
+                        </time>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon truck">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Pickup scheduled
+                            </strong>
+
+                            <span>
+                                Collection confirmed for 16 September
+                            </span>
+
+                        </div>
+
+                        <time>
+                            5h ago
+                        </time>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon analysis">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Value analysis completed
+                            </strong>
+
+                            <span>
+                                Biomass gives the best estimated net value
+                            </span>
+
+                        </div>
+
+                        <time>
+                            Yesterday
+                        </time>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon match">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Environmental impact updated
+                            </strong>
+
+                            <span>
+                                2 tons of residue added to diverted waste
+                            </span>
+
+                        </div>
+
+                        <time>
+                            2d ago
+                        </time>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ENVIRONMENTAL IMPACT
+        ================================================== -->
+
+        <section class="impact-section">
+
+            <div class="impact-content">
+
+                <span class="card-eyebrow">
+                    YOUR AGRICULTURAL IMPACT
+                </span>
+
+                <h2>
+                    Every kilogram diverted creates value.
+                </h2>
+
+                <p>
+                    By connecting agricultural residue with useful
+                    applications instead of disposal or burning,
+                    AgriNova helps turn farm waste into an economic
+                    and environmental resource.
+                </p>
+
+            </div>
+
+
+            <div class="impact-stats">
+
+                <div>
+
+                    <strong>
+                        2.0 T
+                    </strong>
+
+                    <span>
+                        Waste Diverted
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        1.4 T
+                    </strong>
+
+                    <span>
+                        CO₂ Impact*</span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        ₹4.2K
+                    </strong>
+
+                    <span>
+                        Potential Value
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <span>
+                        Batches Tracked
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <p class="impact-note">
+            *Indicative estimate for prototype demonstration; actual environmental impact depends on material, utilization pathway and verified data.
+        </p>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+
+        <!-- Brand -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        AgriNova
+                    </strong>
+
+                    <span>
+                        Farm Waste → Value
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Helping farmers discover better value from
+                agricultural waste through intelligent matching,
+                utilization analysis and organized collection.
+            </p>
+
+
+            <span class="footer-badge">
+                🌾 Smart Agriculture • Sustainable Future
+            </span>
+
+        </div>
+
+
+
+        <!-- Platform -->
+
+        <div class="footer-column">
+
+            <h4>
+                Platform
+            </h4>
+
+            <a href="#">
+                Submit Waste
+            </a>
+
+            <a href="#">
+                My Batches
+            </a>
+
+            <a href="#">
+                Value Analysis
+            </a>
+
+            <a href="#">
+                Collections
+            </a>
+
+        </div>
+
+
+
+        <!-- Operations -->
+
+        <div class="footer-column">
+
+            <h4>
+                Operations
+            </h4>
+
+            <a href="#">
+                Smart Matching
+            </a>
+
+            <a href="#">
+                Waste Passport
+            </a>
+
+            <a href="#">
+                Transport
+            </a>
+
+            <a href="#">
+                Impact
+            </a>
+
+        </div>
+
+
+
+        <!-- Support -->
+
+        <div class="footer-column">
+
+            <h4>
+                Support
+            </h4>
+
+            <a href="#">
+                How It Works
+            </a>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                About AgriNova
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <div>
+            © 2026 AgriNova. All rights reserved.
+        </div>
+
+        <div>
+            🌾 Farm Waste → Value
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Dashboard JS -->
+
+<script src="js/farmer-dashboard.js"></script>
+
+
+</body>
+</html>

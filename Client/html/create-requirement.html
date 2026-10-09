@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Waste Requirement | AgriNova</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/create-requirement.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+    <div class="header-container">
+
+        <a href="index.html" class="main-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="logo-text">
+                <strong>AgriNova</strong>
+                <span>Farm Waste → Value</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="industry-dashboard.html">Dashboard</a>
+            <a href="create-requirement.html" class="active">
+                Create Requirement
+            </a>
+            <a href="smart-matching.html">Smart Matching</a>
+            <a href="#">Requirements</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+
+            <a href="profile.html" class="profile-menu">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div class="profile-info">
+                    <strong>Industry</strong>
+                    <span>Agra, UP</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="requirement-page">
+
+    <div class="page-heading">
+
+        <div class="heading-icon">
+            <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+
+        <div>
+            <span class="eyebrow">INDUSTRY DEMAND</span>
+
+            <h1>Create Waste Requirement</h1>
+
+            <p>
+                Tell AgriNova what your industry needs.
+                We'll find the best available waste for you.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- ================= FORM CARD ================= -->
+
+    <section class="requirement-card">
+
+        <form id="requirementForm">
+
+            <!-- WASTE TYPE -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+                    <span class="step-number">01</span>
+
+                    <div>
+                        <h2>What waste do you need?</h2>
+                        <p>Select the agricultural waste required by your industry.</p>
+                    </div>
+                </div>
+
+                <div class="field">
+
+                    <label for="wasteType">
+                        Waste Type
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-wheat-awn"></i>
+
+                        <select id="wasteType" required>
+
+                            <option value="">
+                                Select waste type
+                            </option>
+
+                            <option value="Rice Straw">
+                                Rice Straw
+                            </option>
+
+                            <option value="Wheat Straw">
+                                Wheat Straw
+                            </option>
+
+                            <option value="Corn Stalk">
+                                Corn Stalk
+                            </option>
+
+                            <option value="Banana Waste">
+                                Banana Waste
+                            </option>
+
+                            <option value="Groundnut Shells">
+                                Groundnut Shells
+                            </option>
+
+                            <option value="Coconut Waste">
+                                Coconut Waste
+                            </option>
+
+                            <option value="Sugarcane Bagasse">
+                                Sugarcane Bagasse
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">02</span>
+
+                    <div>
+                        <h2>How much do you need?</h2>
+                        <p>Enter the approximate quantity required.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="two-column">
+
+                    <div class="field">
+
+                        <label for="quantity">
+                            Required Quantity
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-scale-balanced"></i>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                placeholder="e.g. 10"
+                                min="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="unit">
+                            Unit
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-weight-hanging"></i>
+
+                            <select id="unit" required>
+
+                                <option value="Ton">Ton</option>
+                                <option value="Kg">Kg</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- UTILIZATION -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">03</span>
+
+                    <div>
+                        <h2>What will you use it for?</h2>
+                        <p>Tell us the intended utilization of the waste.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="utilization-grid">
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Biomass Energy"
+                               required>
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-fire-flame-simple"></i>
+                        </div>
+
+                        <strong>Biomass Energy</strong>
+
+                        <span>Energy generation</span>
+
+                    </label>
+
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Biofuel">
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-gas-pump"></i>
+                        </div>
+
+                        <strong>Biofuel</strong>
+
+                        <span>Fuel production</span>
+
+                    </label>
+
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Paper Production">
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <strong>Paper Production</strong>
+
+                        <span>Paper & packaging</span>
+
+                    </label>
+
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Compost">
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                        <strong>Compost</strong>
+
+                        <span>Organic processing</span>
+
+                    </label>
+
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Animal Feed">
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-cow"></i>
+                        </div>
+
+                        <strong>Animal Feed</strong>
+
+                        <span>Feed processing</span>
+
+                    </label>
+
+
+                    <label class="util-card">
+
+                        <input type="radio"
+                               name="utilization"
+                               value="Biochar">
+
+                        <div class="util-icon">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+
+                        <strong>Biochar</strong>
+
+                        <span>Soil enrichment</span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUALITY -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">04</span>
+
+                    <div>
+                        <h2>What quality do you need?</h2>
+                        <p>Choose your preferred waste quality.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quality-options">
+
+                    <label>
+                        <input type="radio"
+                               name="quality"
+                               value="Dry"
+                               required>
+
+                        <span class="quality-box">
+                            <i class="fa-solid fa-sun"></i>
+
+                            <strong>Dry</strong>
+                            <small>Low moisture</small>
+                        </span>
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="quality"
+                               value="Moderately Dry">
+
+                        <span class="quality-box">
+                            <i class="fa-solid fa-cloud-sun"></i>
+
+                            <strong>Moderately Dry</strong>
+                            <small>Medium moisture</small>
+                        </span>
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="quality"
+                               value="Fresh">
+
+                        <span class="quality-box">
+                            <i class="fa-solid fa-droplet"></i>
+
+                            <strong>Fresh</strong>
+                            <small>Higher moisture</small>
+                        </span>
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="quality"
+                               value="Any">
+
+                        <span class="quality-box">
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <strong>Any Quality</strong>
+                            <small>No strict preference</small>
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION + DATE -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">05</span>
+
+                    <div>
+                        <h2>Where and when do you need it?</h2>
+                        <p>Help AgriNova find suitable nearby supply.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="two-column">
+
+                    <div class="field">
+
+                        <label for="location">
+                            Industry / Plant Location
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="e.g. Agra, Uttar Pradesh"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="requiredDate">
+                            Required By
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <input
+                                type="date"
+                                id="requiredDate"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">06</span>
+
+                    <div>
+                        <h2>Delivery preference</h2>
+                        <p>Tell us how the waste should reach your industry.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="delivery-options">
+
+                    <label>
+
+                        <input type="radio"
+                               name="delivery"
+                               value="Industry Pickup"
+                               required>
+
+                        <div class="delivery-card">
+
+                            <i class="fa-solid fa-truck"></i>
+
+                            <div>
+                                <strong>Industry Pickup</strong>
+                                <span>We will arrange collection from the source.</span>
+                            </div>
+
+                        </div>
+
+                    </label>
+
+
+                    <label>
+
+                        <input type="radio"
+                               name="delivery"
+                               value="AgriNova Delivery">
+
+                        <div class="delivery-card">
+
+                            <i class="fa-solid fa-route"></i>
+
+                            <div>
+                                <strong>AgriNova Delivery</strong>
+                                <span>Transport is coordinated to your plant.</span>
+                            </div>
+
+                        </div>
+
+                    </label>
+
+
+                    <label>
+
+                        <input type="radio"
+                               name="delivery"
+                               value="Either">
+
+                        <div class="delivery-card">
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            <div>
+                                <strong>Either</strong>
+                                <span>Choose whichever option is most efficient.</span>
+                            </div>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDITIONAL REQUIREMENT -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span class="step-number">07</span>
+
+                    <div>
+                        <h2>Additional requirements</h2>
+                        <p>Anything else AgriNova should know?</p>
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <textarea
+                        id="additionalRequirements"
+                        rows="4"
+                        placeholder="Example: Moisture below 15%, clean material, no plastic contamination..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="form-actions">
+
+                <a href="industry-dashboard.html"
+                   class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit"
+                        class="create-btn">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Create Requirement
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- SMART MATCHING INFO -->
+
+    <section class="smart-info">
+
+        <div class="smart-info-icon">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+
+        <div>
+
+            <strong>
+                What happens after you create a requirement?
+            </strong>
+
+            <p>
+                AgriNova will analyse available farmer waste,
+                quantity, quality, location and transport distance
+                to find the most suitable matches for your industry.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-leaf"></i>
+                <strong>AgriNova</strong>
+            </div>
+
+            <p>
+                Turning agricultural waste into valuable resources.
+            </p>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 AgriNova. Farm Waste → Value.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="js/create-requirement.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industry Dashboard | AgriNova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Industry Dashboard CSS -->
+    <link rel="stylesheet" href="../css/industry-dashboard.css">
+</head>
+<script>
+    const loggedIn =
+        sessionStorage.getItem("agrinovaLoggedIn");
+
+    const role =
+        sessionStorage.getItem("agrinovaRole");
+
+    if (
+        loggedIn !== "true" ||
+        role !== "industry"
+    ) {
+        alert("Please login as Industry user first.");
+        window.location.href = "login.html";
+    }
+</script>
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <a href="industry-dashboard.html" class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="logo-text">
+                <span>AgriNova</span>
+                <small>Waste → Value</small>
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="industry-dashboard.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="smart-matching.html">
+                <i class="fa-solid fa-clipboard-list"></i>
+                Requirements
+            </a>
+
+            <a href="smart-matching.html">
+                <i class="fa-solid fa-layer-group"></i>
+                Matched Supply
+            </a>
+
+            <a href="group-collection.html">
+                <i class="fa-solid fa-truck"></i>
+                Collections
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-route"></i>
+                Logistics
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-pie"></i>
+                Analytics
+            </a>
+
+        </nav>
+
+<button class="logout-btn" onclick="logoutUser()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</button>
+        <!-- PROFILE -->
+
+        <div class="header-profile">
+
+            <div class="profile-icon">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+
+            <span>Industry</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="industry-main">
+
+
+    <!-- =================================================
+         WELCOME
+    ================================================== -->
+
+    <section class="welcome-section">
+
+        <div class="welcome-content">
+
+            <span class="section-tag">
+                <i class="fa-solid fa-building"></i>
+                INDUSTRY PROCUREMENT
+            </span>
+
+            <h1>
+                Source the right waste,
+                <span>without the search.</span>
+            </h1>
+
+            <p>
+                Tell AgriNova what agricultural material you need.
+                We identify suitable nearby supply, aggregate small
+                batches and estimate procurement logistics.
+            </p>
+
+        </div>
+
+
+        <button class="primary-btn" id="createRequirementBtn" >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Create Requirement
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROCUREMENT STATS
+    ================================================== -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+            <div>
+                <span>Active Requirements</span>
+                <strong>03</strong>
+                <small>Currently sourcing</small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon gold">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <span>Matched Supply</span>
+                <strong>18.5 T</strong>
+                <small>Potential available supply</small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="fa-solid fa-truck"></i>
+            </div>
+
+            <div>
+                <span>In Collection</span>
+                <strong>6.2 T</strong>
+                <small>Pickup in progress</small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon dark">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+                <span>Average Distance</span>
+                <strong>16 km</strong>
+                <small>Matched supply radius</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROCUREMENT REQUIREMENT
+    ================================================== -->
+
+    <section class="requirement-section">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="mini-label">
+                    CURRENT PROCUREMENT
+                </span>
+
+                <h2>
+                    Your Active Requirements
+                </h2>
+
+                <p>
+                    Requirements defined by your industry team.
+                    AgriNova continuously looks for suitable supply.
+                </p>
+
+            </div>
+
+
+            <a href="#" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+
+        <div class="requirement-grid">
+
+
+            <!-- REQUIREMENT 1 -->
+
+            <div class="requirement-card active-card">
+
+                <div class="requirement-top">
+
+                    <div class="material-icon">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <span class="status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Rice Straw
+                </h3>
+
+                <p class="requirement-purpose">
+                    Biomass energy production
+                </p>
+
+
+                <div class="requirement-details">
+
+                    <div>
+                        <small>Required</small>
+                        <strong>50 Ton</strong>
+                    </div>
+
+                    <div>
+                        <small>Max Radius</small>
+                        <strong>30 km</strong>
+                    </div>
+
+                    <div>
+                        <small>Quality</small>
+                        <strong>Dry</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="requirement-footer">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        Needed by 25 Sep
+                    </span>
+
+                    <button class="small-btn">
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REQUIREMENT 2 -->
+
+            <div class="requirement-card">
+
+                <div class="requirement-top">
+
+                    <div class="material-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <span class="status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Wheat Straw
+                </h3>
+
+                <p class="requirement-purpose">
+                    Biofuel production
+                </p>
+
+
+                <div class="requirement-details">
+
+                    <div>
+                        <small>Required</small>
+                        <strong>30 Ton</strong>
+                    </div>
+
+                    <div>
+                        <small>Max Radius</small>
+                        <strong>40 km</strong>
+                    </div>
+
+                    <div>
+                        <small>Quality</small>
+                        <strong>Dry</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="requirement-footer">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        Needed by 30 Sep
+                    </span>
+
+                    <button class="small-btn">
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REQUIREMENT 3 -->
+
+            <div class="requirement-card">
+
+                <div class="requirement-top">
+
+                    <div class="material-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <span class="status pending">
+                        Pending Match
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Sugarcane Bagasse
+                </h3>
+
+                <p class="requirement-purpose">
+                    Paper processing
+                </p>
+
+
+                <div class="requirement-details">
+
+                    <div>
+                        <small>Required</small>
+                        <strong>20 Ton</strong>
+                    </div>
+
+                    <div>
+                        <small>Max Radius</small>
+                        <strong>50 km</strong>
+                    </div>
+
+                    <div>
+                        <small>Quality</small>
+                        <strong>Fresh</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="requirement-footer">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        Needed by 05 Oct
+                    </span>
+
+                    <button class="small-btn">
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECOMMENDED SUPPLY
+    ================================================== -->
+
+    <section class="supply-section">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="mini-label">
+                    AGRINOVA MATCHING
+                </span>
+
+                <h2>
+                    Recommended Waste Supply
+                </h2>
+
+                <p>
+                    Potential agricultural waste batches matching
+                    your active procurement requirements.
+                </p>
+
+            </div>
+
+
+            <a href="#" class="view-all">
+                Explore Supply
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+
+        <div class="supply-table-wrapper">
+
+            <table class="supply-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Waste Batch</th>
+                        <th>Location</th>
+                        <th>Quantity</th>
+                        <th>Distance</th>
+                        <th>Quality</th>
+                        <th>Match</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <!-- ROW 1 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="batch-name">
+
+                                <span class="table-icon">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                </span>
+
+                                <div>
+                                    <strong>AGRI-2026-00125</strong>
+                                    <small>Rice Straw</small>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Agra
+                        </td>
+
+
+                        <td>
+                            <strong>2,000 kg</strong>
+                        </td>
+
+
+                        <td>
+                            12 km
+                        </td>
+
+
+                        <td>
+                            <span class="quality good">
+                                Dry
+                            </span>
+                        </td>
+
+
+                        <td>
+
+                            <span class="match-score">
+                                94%
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button class="action-btn">
+                                View
+                            </button>
+
+                            <button class="match-btn">
+                                Match
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ROW 2 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="batch-name">
+
+                                <span class="table-icon">
+                                    <i class="fa-solid fa-leaf"></i>
+                                </span>
+
+                                <div>
+                                    <strong>AGRI-2026-00131</strong>
+                                    <small>Rice Straw</small>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Bharatpur
+                        </td>
+
+
+                        <td>
+                            <strong>4,500 kg</strong>
+                        </td>
+
+
+                        <td>
+                            28 km
+                        </td>
+
+
+                        <td>
+                            <span class="quality good">
+                                Dry
+                            </span>
+                        </td>
+
+
+                        <td>
+
+                            <span class="match-score">
+                                88%
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button class="action-btn">
+                                View
+                            </button>
+
+                            <button class="match-btn">
+                                Match
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ROW 3 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="batch-name">
+
+                                <span class="table-icon">
+                                    <i class="fa-solid fa-box"></i>
+                                </span>
+
+                                <div>
+                                    <strong>AGRI-2026-00144</strong>
+                                    <small>Wheat Straw</small>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Mathura
+                        </td>
+
+
+                        <td>
+                            <strong>3,200 kg</strong>
+                        </td>
+
+
+                        <td>
+                            34 km
+                        </td>
+
+
+                        <td>
+                            <span class="quality medium">
+                                Moderate
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="match-score">
+                                81%
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button class="action-btn">
+                                View
+                            </button>
+
+                            <button class="match-btn">
+                                Match
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROCUREMENT + LOGISTICS
+    ================================================== -->
+
+    <section class="operations-grid">
+
+
+        <!-- PROCUREMENT VALUE -->
+
+        <div class="operation-card">
+
+            <div class="operation-header">
+
+                <div>
+
+                    <span class="mini-label">
+                        PROCUREMENT VALUE
+                    </span>
+
+                    <h2>
+                        Estimated Supply Value
+                    </h2>
+
+                </div>
+
+                <div class="operation-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+            </div>
+
+
+            <div class="big-value">
+                ₹46,250
+            </div>
+
+            <p>
+                Estimated value of currently matched waste supply.
+                Final value depends on quality, quantity and agreed terms.
+            </p>
+
+
+            <div class="value-breakdown">
+
+                <div>
+                    <span>Matched Quantity</span>
+                    <strong>18.5 Ton</strong>
+                </div>
+
+                <div>
+                    <span>Avg. Distance</span>
+                    <strong>16 km</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COLLECTION STATUS -->
+
+        <div class="operation-card">
+
+            <div class="operation-header">
+
+                <div>
+
+                    <span class="mini-label">
+                        COLLECTION
+                    </span>
+
+                    <h2>
+                        Current Pickup Status
+                    </h2>
+
+                </div>
+
+                <div class="operation-icon truck">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+            </div>
+
+
+            <div class="collection-status">
+
+                <div class="status-row completed">
+
+                    <span class="status-dot">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <div>
+                        <strong>Pickup Assigned</strong>
+                        <small>Transport partner confirmed</small>
+                    </div>
+
+                </div>
+
+
+                <div class="status-line"></div>
+
+
+                <div class="status-row current">
+
+                    <span class="status-dot">
+                        <i class="fa-solid fa-truck"></i>
+                    </span>
+
+                    <div>
+                        <strong>On the Way</strong>
+                        <small>Estimated arrival: 2:30 PM</small>
+                    </div>
+
+                </div>
+
+
+                <div class="status-line"></div>
+
+
+                <div class="status-row upcoming">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>Delivered</strong>
+                        <small>Awaiting collection</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SMART PROCUREMENT MESSAGE
+    ================================================== -->
+
+    <section class="smart-banner">
+
+        <div class="smart-icon">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+
+
+        <div class="smart-content">
+
+            <span class="mini-label">
+                AGRINOVA INTELLIGENCE
+            </span>
+
+            <h2>
+                You define the requirement.
+                We find the supply.
+            </h2>
+
+            <p>
+                AgriNova considers waste type, available quantity,
+                quality, location, demand and logistics to identify
+                practical procurement opportunities.
+            </p>
+
+        </div>
+
+
+        <button class="secondary-btn" id="viewMatchingBtn">
+
+            View Matching
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECENT ACTIVITY
+    ================================================== -->
+
+    <section class="activity-section">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="mini-label">
+                    ACTIVITY
+                </span>
+
+                <h2>
+                    Recent Procurement Activity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-list">
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon green">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="activity-info">
+
+                    <strong>
+                        Rice Straw batch matched
+                    </strong>
+
+                    <span>
+                        AGRI-2026-00125 · Agra · 2,000 kg
+                    </span>
+
+                </div>
+
+                <time>
+                    20 min ago
+                </time>
+
+            </div>
+
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon gold">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <div class="activity-info">
+
+                    <strong>
+                        Collection assigned
+                    </strong>
+
+                    <span>
+                        AGRI-2026-00118 · Transport partner confirmed
+                    </span>
+
+                </div>
+
+                <time>
+                    1 hr ago
+                </time>
+
+            </div>
+
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon blue">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div class="activity-info">
+
+                    <strong>
+                        New procurement requirement created
+                    </strong>
+
+                    <span>
+                        Sugarcane Bagasse · 20 Ton
+                    </span>
+
+                </div>
+
+                <time>
+                    Yesterday
+                </time>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="main-footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <span>
+                    AgriNova
+                </span>
+
+            </div>
+
+
+            <p>
+                Connecting agricultural waste with
+                the places where it creates the most value.
+            </p>
+
+
+            <strong class="developers">
+                🌾 Waste → Value
+            </strong>
+
+        </div>
+
+
+
+        <!-- PLATFORM -->
+
+        <div class="footer-column">
+
+            <h4>
+                Platform
+            </h4>
+
+            <a href="industry-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="#">
+                Requirements
+            </a>
+
+            <a href="#">
+                Matched Supply
+            </a>
+
+        </div>
+
+
+
+        <!-- OPERATIONS -->
+
+        <div class="footer-column">
+
+            <h4>
+                Operations
+            </h4>
+
+            <a href="#">
+                Collections
+            </a>
+
+            <a href="#">
+                Logistics
+            </a>
+
+            <a href="#">
+                Analytics
+            </a>
+
+        </div>
+
+
+
+        <!-- SUPPORT -->
+
+        <div class="footer-column">
+
+            <h4>
+                Support
+            </h4>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AgriNova. All rights reserved.
+        </span>
+
+        <span>
+            Smart Procurement · Smart Logistics · Smart Value
+        </span>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script src="js/industry-dashboard.js"></script>
+
+</body>
+</html>
